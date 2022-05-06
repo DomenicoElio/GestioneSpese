@@ -10,7 +10,7 @@ namespace GestioneSpese.Handler
     {
         public override double Handle(double request)
         {
-            if (request >= 401 || request <= 1001)
+            if (request >= 401 && request <= 1001)
                 return request;
             else
                 return base.Handle(request);
