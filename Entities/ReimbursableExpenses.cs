@@ -6,20 +6,22 @@ using System.Threading.Tasks;
 
 namespace GestioneSpese.Entities
 {
-    internal class ReimbursableExpenses : Expenses
+    public enum Level
     {
-        bool approved = true;
+        manager,
+        operationalManager,
+        CEO
+    }
+    public class ProcessedExpence : Expenses
+    {
+        public bool Approved { get; set; }
+        public Level approvedBy { get; set; }
+        public double Refund { get; set; }
 
-        string approvalLevel { get; set; }
+        public string RefundApproved() {return Approved ? "your refund has been issued" : "refund denied";}
 
-        double reimbursementValue { get; set; }
+        public override string ToRow() {return $"{base.ToRow()};{Approved};{approvedBy};{Refund}";}
 
-        public override void Print()
-        {
-            Console.WriteLine($"Date: {Date}. Category= {Category}, Desc.= {Description}, Costs= {Costs}, Approved?={approved}" +
-                $", By who?= {approvalLevel}{reimbursementValue}");
-        }
-
-
+        public override string ToString(){return base.ToString() +$"Stato: {RefundApproved()}" +$"Livello: {approvedBy}" +$"Importo rimborsato: €{Refund}";}
     }
 }
