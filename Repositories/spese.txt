@@ -1,6 +1,0 @@
-﻿Date = 01-05-2022; Category = Viaggio; Description = "Viaggio di Lavoro"; Costs = 1100
-Date = 02-05-2022; Category = Vitto; Description = "Pranzo con Cliente";400
-Date = 03-05-2022; Category = Viaggio; Description = "Viaggio di Lavoro";250
-Date = 04-05-2022; Category = Allogio; Description = "Peronattamento Hotel";1500 
-Date = 05-05-2022; Category = Vitto; Description = "Cena con Cliente";600
-Date = 06-05-2022; Category = Altro; Description = "Spese Cliente";3000

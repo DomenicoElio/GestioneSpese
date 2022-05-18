@@ -7,10 +7,13 @@ using System.Threading.Tasks;
 
 namespace GestioneSpese.Factory
 {
-    public interface ICategory
+    public class Other : ICategory
     {
-        string Name { get; set; }
+        public string Name { get; set; } = "Other";
 
-        double GetRefund(Expense expense);
+        public double GetRefund(Expense expense)
+        {
+            return expense.Amount * 0.1;
+        }
     }
 }

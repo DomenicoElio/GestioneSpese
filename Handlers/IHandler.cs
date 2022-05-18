@@ -5,12 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GestioneSpese.Factory
+namespace GestioneSpese.Handlers
 {
-    public interface ICategory
+    public interface IHandler
     {
-        string Name { get; set; }
-
-        double GetRefund(Expense expense);
+        IHandler SetNext(IHandler handler);
+        Refund Handle(Expense expense);
     }
 }
